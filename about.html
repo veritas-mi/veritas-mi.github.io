@@ -8,12 +8,14 @@
   <link rel="canonical" href="https://veritasmarketinsights.com/about.html" />
   <link rel="icon" type="image/png" href="/assets/favicon.png" />
 
+  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://veritasmarketinsights.com/about.html" />
   <meta property="og:title" content="About & Methodology | Veritas Market Insights" />
   <meta property="og:description" content="The Veritas Mandate & Forensic Methodology: verified evidentiary market intelligence without advisory bloat." />
   <meta property="og:image" content="https://veritasmarketinsights.com/assets/favicon.png" />
 
+  <!-- Twitter / X -->
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="About & Method | Veritas Market Insights" />
   <meta name="twitter:description" content="The Veritas Mandate & Forensic Methodology." />
@@ -142,33 +144,56 @@
       margin-bottom: 2rem;
     }
 
-    .narrative-block {
-      margin-bottom: 2rem;
-    }
-
-    .narrative-block h3 {
-      font-size: 1.15rem;
-      color: var(--vmi-navy);
-      margin-bottom: 0.5rem;
-    }
-
-    .narrative-block p {
-      font-size: 0.95rem;
-      color: var(--vmi-text-muted);
-      line-height: 1.7;
-      margin-bottom: 0.75rem;
-    }
-
     .analyst-profile {
+      text-align: center;
+      padding: 2rem;
       background: var(--vmi-slate);
       border: 1px solid var(--vmi-border);
-      border-left: 4px solid var(--vmi-navy);
-      border-radius: 6px;
-      padding: 1.5rem;
-      margin-bottom: 2rem;
+      border-radius: 8px;
+      margin-bottom: 2.5rem;
     }
 
-    .methodology-step {
+    .profile-badge {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background: var(--vmi-navy);
+      border: 3px solid var(--vmi-teal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.25rem;
+      color: var(--vmi-teal);
+      font-size: 1.9rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+
+    .analyst-profile h3 {
+      font-size: 1.3rem;
+      color: var(--vmi-navy);
+      margin-bottom: 0.35rem;
+    }
+
+    .analyst-profile .role {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--vmi-teal-dark);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 1rem;
+    }
+
+    .analyst-profile p {
+      max-width: 620px;
+      margin: 0 auto;
+      font-size: 0.95rem;
+      color: var(--vmi-text-muted);
+      line-height: 1.6;
+    }
+
+    .method-step {
       display: flex;
       gap: 1.25rem;
       margin-bottom: 1.5rem;
@@ -177,32 +202,27 @@
 
     .step-number {
       background: var(--vmi-navy);
-      color: var(--vmi-white);
+      color: var(--vmi-teal);
       font-weight: 800;
-      width: 36px;
+      font-size: 1rem;
+      min-width: 36px;
       height: 36px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      flex-shrink: 0;
-      font-size: 0.9rem;
+      margin-top: 0.15rem;
     }
 
-    .btn-action {
-      display: inline-block;
-      text-align: center;
-      background: var(--vmi-navy);
-      color: var(--vmi-white);
-      padding: 0.75rem 1.25rem;
-      font-weight: 700;
-      text-decoration: none;
-      border-radius: 6px;
-      transition: background 0.2s;
+    .step-content h4 {
+      font-size: 1.1rem;
+      color: var(--vmi-navy);
+      margin-bottom: 0.3rem;
     }
 
-    .btn-action:hover {
-      background: var(--vmi-teal-dark);
+    .step-content p {
+      font-size: 0.95rem;
+      color: var(--vmi-text-muted);
     }
 
     /* Footer */
@@ -248,6 +268,7 @@
     @media (max-width: 650px) {
       .page-card { padding: 1.5rem; }
       .site-nav a { font-size: 0.8rem; padding: 0.9rem 0.6rem; }
+      .method-step { flex-direction: column; gap: 0.5rem; }
     }
   </style>
 </head>
@@ -260,6 +281,7 @@
   </header>
 
   <main>
+    <!-- Multi-Page Site Navigation -->
     <nav class="site-nav">
       <a href="/">Overview</a>
       <a href="/about.html" class="active">About & Method</a>
@@ -268,59 +290,51 @@
       <a href="/protocol.html">Protocol & SOPs</a>
     </nav>
 
+    <!-- About Content Body -->
     <section class="page-card">
-      <h2 class="section-heading">The Veritas Mandate & Forensic Methodology</h2>
-      <p class="section-subtext">Traditional consulting relies on subjective opinions and billable hour bloat. Veritas Market Insights operates on verified evidentiary data and asynchronous execution.</p>
+      <h2 class="section-heading">The Veritas Mandate</h2>
+      <p class="section-subtext">Enterprise strategy should not rely on surface marketing narratives or generic AI summaries. We build actionable dossiers based on verified technical, commercial, and operational evidence.</p>
 
-      <div class="narrative-block">
-        <h3>Who We Are</h3>
-        <p>Veritas Market Insights is a dedicated B2B competitive intelligence and market forensics advisory. We serve founders, commercial directors, and corporate procurement leaders navigating complex tenders, aggressive competitors, and operational cost structures.</p>
-      </div>
-
+      <!-- Clean Monogram Profile Card -->
       <div class="analyst-profile">
-        <h3 style="margin-bottom: 0.5rem; font-size: 1.15rem; color: var(--vmi-navy);">Principal Analyst & Leadership</h3>
-        <p style="margin-bottom: 0.5rem; font-size: 0.95rem;"><strong>Christopher Murphy</strong> | Founder & Principal Intelligence Analyst</p>
-        <p style="font-size: 0.9rem; color: var(--vmi-text-muted); margin-bottom: 0;">Specializing in forensic data extraction, competitive footprint reconstruction, and institutional B2B intelligence architecture. Dedicated to delivering unvarnished, clinical market assessments without the bloat, agency overhead, or subjective ambiguity of legacy consulting firms.</p>
+        <div class="profile-badge">VMI</div>
+        <h3>Principal Analyst & Forensics Desk</h3>
+        <div class="role">Veritas Market Insights</div>
+        <p>Operating at the intersection of open-source commercial intelligence, digital footprint analysis, and competitive vulnerability mapping to support decisive enterprise moves.</p>
       </div>
 
-      <div class="narrative-block">
-        <h3>The 4-Stage Intelligence Lifecycle</h3>
-        
-        <div class="methodology-step">
-          <div class="step-number">1</div>
-          <div>
-            <h4 style="color: var(--vmi-navy); font-size: 1rem;">Scope Calibration & Boundary Definition</h4>
-            <p style="font-size: 0.9rem; color: var(--vmi-text-muted);">We isolate precise questions—such as competitor margin vulnerability, supplier dependencies, or tech debt—preventing generic data overload.</p>
-          </div>
-        </div>
+      <h3 style="color: var(--vmi-navy); font-size: 1.25rem; font-weight: 800; margin-bottom: 1.25rem;">Our 4-Stage Intelligence Lifecycle</h3>
 
-        <div class="methodology-step">
-          <div class="step-number">2</div>
-          <div>
-            <h4 style="color: var(--vmi-navy); font-size: 1rem;">Multi-Vector Data Ingestion</h4>
-            <p style="font-size: 0.9rem; color: var(--vmi-text-muted);">Ingesting public corporate disclosures, procurement records, technical footprint logs, and open-source intelligence (OSINT).</p>
-          </div>
-        </div>
-
-        <div class="methodology-step">
-          <div class="step-number">3</div>
-          <div>
-            <h4 style="color: var(--vmi-navy); font-size: 1rem;">Cross-Verification & Triangulation</h4>
-            <p style="font-size: 0.9rem; color: var(--vmi-text-muted);">No data point enters our dossiers without verification across at least two independent primary or technical sources.</p>
-          </div>
-        </div>
-
-        <div class="methodology-step">
-          <div class="step-number">4</div>
-          <div>
-            <h4 style="color: var(--vmi-navy); font-size: 1rem;">Actionable Dossier Delivery</h4>
-            <p style="font-size: 0.9rem; color: var(--vmi-text-muted);">We deliver clear, written strategic briefs with executive summaries, risk matrices, and direct offensive/defensive recommendations.</p>
-          </div>
+      <div class="method-step">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <h4>Scope Calibration</h4>
+          <p>We isolate specific operational blindspots, competitor targets, tender requirements, or infrastructure spend targets to define an unambiguous research perimeter.</p>
         </div>
       </div>
 
-      <div style="text-align: center; margin-top: 2rem;">
-        <a href="/diagnostic.html" class="btn-action">Initiate a Scope Assessment &rarr;</a>
+      <div class="method-step">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <h4>Multi-Vector Data Ingestion</h4>
+          <p>We deploy forensic OSINT tools to collect technical footprints, historical vendor pricing, capacity limits, corporate disclosures, and active SaaS dependencies.</p>
+        </div>
+      </div>
+
+      <div class="method-step">
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <h4>Bilateral Cross-Verification</h4>
+          <p>No data point is accepted from a single unverified source. All intelligence findings are cross-checked against independent public registries and technical logs.</p>
+        </div>
+      </div>
+
+      <div class="method-step">
+        <div class="step-number">4</div>
+        <div class="step-content">
+          <h4>Actionable Brief Delivery</h4>
+          <p>You receive an executive-ready, highly distilled intelligence briefing containing concrete risk matrices and defensive recommendations—zero filler.</p>
+        </div>
       </div>
     </section>
   </main>
