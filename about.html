@@ -144,53 +144,60 @@
       margin-bottom: 2rem;
     }
 
+    /* Profile / Bio Card */
     .analyst-profile {
-      text-align: center;
-      padding: 2rem;
       background: var(--vmi-slate);
       border: 1px solid var(--vmi-border);
       border-radius: 8px;
+      padding: 2rem;
       margin-bottom: 2.5rem;
+      display: flex;
+      gap: 2rem;
+      align-items: flex-start;
     }
 
     .profile-badge {
-      width: 110px;
-      height: 110px;
+      min-width: 100px;
+      width: 100px;
+      height: 100px;
       border-radius: 50%;
       background: var(--vmi-navy);
       border: 3px solid var(--vmi-teal);
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 0 auto 1.25rem;
       color: var(--vmi-teal);
-      font-size: 1.9rem;
+      font-size: 1.6rem;
       font-weight: 800;
       letter-spacing: 1px;
+      flex-shrink: 0;
       box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     }
 
-    .analyst-profile h3 {
-      font-size: 1.3rem;
+    .profile-details h3 {
+      font-size: 1.35rem;
       color: var(--vmi-navy);
-      margin-bottom: 0.35rem;
+      margin-bottom: 0.25rem;
     }
 
-    .analyst-profile .role {
+    .profile-details .role {
       font-size: 0.85rem;
       font-weight: 700;
       color: var(--vmi-teal-dark);
       text-transform: uppercase;
       letter-spacing: 1px;
-      margin-bottom: 1rem;
+      margin-bottom: 0.75rem;
     }
 
-    .analyst-profile p {
-      max-width: 620px;
-      margin: 0 auto;
+    .profile-details p {
       font-size: 0.95rem;
       color: var(--vmi-text-muted);
       line-height: 1.6;
+      margin-bottom: 0.75rem;
+    }
+
+    .profile-details p:last-child {
+      margin-bottom: 0;
     }
 
     .method-step {
@@ -265,9 +272,10 @@
       color: var(--vmi-border);
     }
 
-    @media (max-width: 650px) {
+    @media (max-width: 700px) {
       .page-card { padding: 1.5rem; }
       .site-nav a { font-size: 0.8rem; padding: 0.9rem 0.6rem; }
+      .analyst-profile { flex-direction: column; align-items: center; text-align: center; gap: 1rem; }
       .method-step { flex-direction: column; gap: 0.5rem; }
     }
   </style>
@@ -295,12 +303,15 @@
       <h2 class="section-heading">The Veritas Mandate</h2>
       <p class="section-subtext">Enterprise strategy should not rely on surface marketing narratives or generic AI summaries. We build actionable dossiers based on verified technical, commercial, and operational evidence.</p>
 
-      <!-- Clean Monogram Profile Card -->
+      <!-- Principal Analyst Profile Section -->
       <div class="analyst-profile">
         <div class="profile-badge">VMI</div>
-        <h3>Principal Analyst & Forensics Desk</h3>
-        <div class="role">Veritas Market Insights</div>
-        <p>Operating at the intersection of open-source commercial intelligence, digital footprint analysis, and competitive vulnerability mapping to support decisive enterprise moves.</p>
+        <div class="profile-details">
+          <h3>Christopher Murphy</h3>
+          <div class="role">Founder & Principal Intelligence Analyst</div>
+          <p>Specializing in B2B competitive forensics, commercial risk modeling, and operational intelligence pipelines. Veritas Market Insights was established to cut through traditional consulting fluff, providing founders, executives, and commercial teams with clinical, data-backed market clarity.</p>
+          <p>By leveraging advanced open-source intelligence (OSINT) workflows, secondary registry cross-referencing, and proprietary diagnostic frameworks, we deliver clear, defensible decision matrices without long advisory retainers or billable bloat.</p>
+        </div>
       </div>
 
       <h3 style="color: var(--vmi-navy); font-size: 1.25rem; font-weight: 800; margin-bottom: 1.25rem;">Our 4-Stage Intelligence Lifecycle</h3>
