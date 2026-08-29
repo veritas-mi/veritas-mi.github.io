@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Direct search crawlers to the sitemap index
+Sitemap: https://veritasmarketinsights.com/sitemap.xml
