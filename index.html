@@ -369,7 +369,6 @@
       <button class="tab-btn" onclick="switchTab(event, 'toolkits')">Toolkits</button>
       <button class="tab-btn" onclick="switchTab(event, 'protocol')">Protocol & SOPs</button>
     </div>
-
     <!-- Tab 1: Overview -->
     <div id="overview" class="tab-content active">
       <h2 class="section-heading">Evidentiary Competitive Intelligence</h2>
@@ -538,8 +537,7 @@
         </div>
       </div>
     </div>
-
-    <!-- Tab 5: Protocol -->
+        <!-- Tab 5: Protocol -->
     <div id="protocol" class="tab-content">
       <h2 class="section-heading">Operating Protocol & Engagement Standards</h2>
       <p class="section-subtext">Institutional research demands rigorous verification. Veritas Market Insights operates under three mandatory pillars:</p>
@@ -564,4 +562,86 @@
   <footer>
     <p>© 2026 Veritas Market Insights. All rights reserved.</p>
     <div class="footer-links">
-      <a href="/diagnostic.html" class="highl
+      <a href="/diagnostic.html" class="highlight">Direct Intake Portal</a>
+      <span class="dot-separator">•</span>
+      <a href="/privacy.html">Privacy Policy</a>
+      <span class="dot-separator">•</span>
+      <a href="/terms.html">Terms of Engagement</a>
+      <span class="dot-separator">•</span>
+      <a href="mailto:contact@veritasmarketinsights.com">Contact Desk</a>
+    </div>
+  </footer>
+
+  <script>
+    function switchTab(evt, tabId) {
+      var contents = document.getElementsByClassName("tab-content");
+      for (var i = 0; i < contents.length; i++) {
+        contents[i].classList.remove("active");
+      }
+
+      var buttons = document.getElementsByClassName("tab-btn");
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].classList.remove("active");
+      }
+
+      document.getElementById(tabId).classList.add("active");
+      evt.currentTarget.classList.add("active");
+    }
+
+    function activateTab(tabId) {
+      var targetBtn = Array.from(document.getElementsByClassName("tab-btn")).find(function(btn) {
+        return btn.getAttribute("onclick").includes(tabId);
+      });
+      if (targetBtn) {
+        targetBtn.click();
+        window.scrollTo({ top: document.querySelector('.tab-nav-container').offsetTop - 20, behavior: 'smooth' });
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      var form = document.getElementById('diagnostic-form');
+      if (form) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          var submitBtn = document.getElementById('submit-btn');
+          var feedback = document.getElementById('form-feedback');
+
+          submitBtn.disabled = true;
+          submitBtn.innerText = 'Transmitting Engagement Request...';
+
+          var formData = new FormData(form);
+
+          fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: { 'Accept': 'application/json' },
+            body: formData
+          })
+          .then(function(response) { return response.json(); })
+          .then(function(data) {
+            if (data.success) {
+              feedback.style.backgroundColor = 'rgba(0, 208, 156, 0.15)';
+              feedback.style.color = '#008560';
+              feedback.style.border = '1px solid #00D09C';
+              feedback.innerText = 'Diagnostic parameters successfully transmitted. Our analysts will review your scope and follow up promptly.';
+              feedback.style.display = 'block';
+              form.reset();
+              submitBtn.style.display = 'none';
+            } else {
+              throw new Error(data.message || 'Submission failed');
+            }
+          })
+          .catch(function() {
+            feedback.style.backgroundColor = '#fee2e2';
+            feedback.style.color = '#b91c1c';
+            feedback.style.border = '1px solid #ef4444';
+            feedback.innerText = 'Transmission error. Please submit directly via email to contact@veritasmarketinsights.com';
+            feedback.style.display = 'block';
+            submitBtn.disabled = false;
+            submitBtn.innerText = 'Transmit Engagement Request →';
+          });
+        });
+      }
+    });
+  </script>
+</body>
+</html>
