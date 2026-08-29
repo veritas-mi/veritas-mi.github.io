@@ -3,11 +3,11 @@
   <url>
     <loc>https://veritasmarketinsights.com/</loc>
     <lastmod>2026-08-29</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.veritasmarketinsights.com/</loc>
+    <loc>https://veritasmarketinsights.com/about.html</loc>
     <lastmod>2026-08-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -16,7 +16,19 @@
     <loc>https://veritasmarketinsights.com/diagnostic.html</loc>
     <lastmod>2026-08-29</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://veritasmarketinsights.com/toolkits.html</loc>
+    <lastmod>2026-08-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://veritasmarketinsights.com/protocol.html</loc>
+    <lastmod>2026-08-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://veritasmarketinsights.com/privacy.html</loc>
