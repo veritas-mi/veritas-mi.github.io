@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diagnostic Intake Scope | Veritas Market Insights</title>
+  <link rel="icon" type="image/png" href="/assets/favicon.png" />
+  <style>
+    :root {
+      --vmi-navy: #0A2540;
+      --vmi-teal: #00D09C;
+      --vmi-teal-dark: #00A87D;
+      --vmi-bg-slate: #F8FAFC;
+      --vmi-white: #FFFFFF;
+      --vmi-text-main: #0F172A;
+      --vmi-text-muted: #475569;
+      --vmi-border: #E2E8F0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    body {
+      background-color: var(--vmi-bg-slate);
+      color: var(--vmi-text-main);
+      padding: 3rem 1.5rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 800px;
+    }
+
+    .back-link {
+      display: inline-block;
+      color: var(--vmi-teal-dark);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-tag {
+      color: var(--vmi-teal-dark);
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: var(--vmi-navy);
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 0.75rem;
+    }
+
+    p.lead {
+      font-size: 1.05rem;
+      color: var(--vmi-text-muted);
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    .form-container {
+      background: var(--vmi-white);
+      border: 1px solid var(--vmi-border);
+      border-top: 4px solid var(--vmi-navy);
+      padding: 2.5rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1.25rem;
+    }
+
+    .form-group label {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--vmi-navy);
+      margin-bottom: 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      font-size: 0.95rem;
+      border: 1px solid var(--vmi-border);
+      border-radius: 6px;
+      background-color: var(--vmi-bg-slate);
+      color: var(--vmi-text-main);
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--vmi-teal);
+      background-color: var(--vmi-white);
+    }
+
+    .form-submit-btn {
+      background-color: var(--vmi-navy);
+      color: var(--vmi-white);
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      width: 100%;
+      transition: background-color 0.2s ease;
+    }
+
+    .form-submit-btn:hover {
+      background-color: var(--vmi-teal-dark);
+    }
+
+    .form-feedback-message {
+      display: none;
+      margin-top: 1.25rem;
+      padding: 1rem;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      line-height: 1.5;
+    }
+
+    .form-protocol-notice {
+      margin-top: 1.25rem;
+      font-size: 0.85rem;
+      border-left: 3px solid var(--vmi-teal);
+      padding-left: 0.75rem;
+      color: var(--vmi-text-muted);
+      line-height: 1.5;
+    }
+
+    @media (max-width: 600px) {
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+      .form-container {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <a href="/" class="back-link">&larr; Return to Executive Overview</a>
+    
+    <div class="section-tag">Diagnostic Intake</div>
+    <h1>Initiate an Intelligence Engagement</h1>
+    <p class="lead">Submit your organizational parameters and competitive scope below. Our analysts will evaluate your criteria and structure a tailored engagement proposal.</p>
+
+    <div class="form-container">
+      <form id="diagnostic-form">
+        <input type="hidden" name="access_key" value="af906552-436c-47d8-8ac0-3805c2e4e20a" />
+        <input type="hidden" name="subject" value="New Diagnostic Intake Scope - Veritas Market Insights" />
+        <input type="hidden" name="from_name" value="VMI Diagnostic Engine" />
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="name">Principal / Stakeholder Name *</label>
+            <input type="text" id="name" name="name" required placeholder="Jane Doe" />
+          </div>
+          <div class="form-group">
+            <label for="email">Corporate Email *</label>
+            <input type="email" id="email" name="email" required placeholder="j.doe@company.com" />
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="company">Entity / Organization *</label>
+            <input type="text" id="company" name="company" required placeholder="Acme Enterprises LLC" />
+          </div>
+          <div class="form-group">
+            <label for="competitors">Target Competitors to Audit</label>
+            <input type="text" id="competitors" name="competitors" placeholder="e.g., Competitor A, Competitor B" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="diagnostic-type">Diagnostic Engagement Pillar</label>
+          <select id="diagnostic-type" name="diagnostic-type">
+            <option value="B2B Competitive Intelligence">B2B Competitive & Tender Intelligence</option>
+            <option value="Tech Stack & SaaS Audit">Tech Stack & SaaS Forensic Audit</option>
+            <option value="Digital Footprint Optimization">Digital Footprint & Infrastructure Audit</option>
+            <option value="Comprehensive Forensic Diagnostic">Full Comprehensive Diagnostic (All Pillars)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="scope">Operational Objectives & Key Questions *</label>
+          <textarea id="scope" name="scope" rows="5" required placeholder="Detail the core strategic decision, tender bid, or cost optimization target this intelligence dossier must inform..."></textarea>
+        </div>
+
+        <button type="submit" id="submit-btn" class="form-submit-btn">Transmit Engagement Request &rarr;</button>
+        
+        <div id="form-feedback" class="form-feedback-message"></div>
+
+        <p class="form-protocol-notice">
+          <strong>Operational Protocol:</strong> All evaluations and client engagements are conducted via secured written correspondence to maintain an unbroken audit trail and protect sensitive competitive data.
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var form = document.getElementById('diagnostic-form');
+      if (form) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          var submitBtn = document.getElementById('submit-btn');
+          var feedback = document.getElementById('form-feedback');
+
+          submitBtn.disabled = true;
+          submitBtn.innerText = 'Transmitting Engagement Request...';
+
+          var formData = new FormData(form);
+
+          fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: { 'Accept': 'application/json' },
+            body: formData
+          })
+          .then(function(response) { return response.json(); })
+          .then(function(data) {
+            if (data.success) {
+              feedback.style.backgroundColor = 'rgba(0, 208, 156, 0.15)';
+              feedback.style.color = '#008560';
+              feedback.style.border = '1px solid #00D09C';
+              feedback.innerText = 'Diagnostic parameters successfully transmitted. Our analysts will review your scope and follow up promptly.';
+              feedback.style.display = 'block';
+              form.reset();
+              submitBtn.style.display = 'none';
+            } else {
+              throw new Error(data.message || 'Submission failed');
+            }
+          })
+          .catch(function() {
+            feedback.style.backgroundColor = '#fee2e2';
+            feedback.style.color = '#b91c1c';
+            feedback.style.border = '1px solid #ef4444';
+            feedback.innerText = 'Transmission error. Please submit directly via email to contact@veritasmarketinsights.com';
+            feedback.style.display = 'block';
+            submitBtn.disabled = false;
+            submitBtn.innerText = 'Transmit Engagement Request →';
+          });
+        });
+      }
+    });
+  </script>
+</body>
+</html>
