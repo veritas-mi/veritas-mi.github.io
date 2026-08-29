@@ -38,7 +38,7 @@
     header {
       background: var(--vmi-navy);
       color: var(--vmi-white);
-      padding: 3.5rem 1.5rem;
+      padding: 3.5rem 1.5rem 4rem;
       text-align: center;
       border-bottom: 4px solid var(--vmi-teal);
     }
@@ -68,38 +68,85 @@
     }
 
     main {
-      max-width: 900px;
+      max-width: 950px;
       margin: -2rem auto 3rem;
       padding: 0 1.5rem;
     }
 
-    .card {
+    /* Tab Navigation Bar */
+    .tab-nav-container {
+      display: flex;
       background: var(--vmi-white);
       border: 1px solid var(--vmi-border);
-      border-radius: 8px;
-      padding: 2.5rem;
-      margin-bottom: 2rem;
+      border-radius: 8px 8px 0 0;
+      overflow-x: auto;
       box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    }
+
+    .tab-btn {
+      flex: 1;
+      padding: 1.15rem 1rem;
+      border: none;
+      background: transparent;
+      color: var(--vmi-text-muted);
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      text-align: center;
+      border-bottom: 3px solid transparent;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+    }
+
+    .tab-btn:hover {
+      color: var(--vmi-navy);
+      background: var(--vmi-slate);
+    }
+
+    .tab-btn.active {
+      color: var(--vmi-navy);
+      border-bottom: 3px solid var(--vmi-teal);
+      background: var(--vmi-white);
+    }
+
+    /* Tab Content Cards */
+    .tab-content {
+      display: none;
+      background: var(--vmi-white);
+      border: 1px solid var(--vmi-border);
+      border-top: none;
+      border-radius: 0 0 8px 8px;
+      padding: 2.5rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+      margin-bottom: 2rem;
+    }
+
+    .tab-content.active {
+      display: block;
     }
 
     .section-heading {
       font-size: 1.4rem;
       color: var(--vmi-navy);
       font-weight: 800;
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
+      margin-bottom: 0.75rem;
     }
 
-    .toolkit-grid {
+    .section-subtext {
+      color: var(--vmi-text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+    }
+
+    /* Grid Layouts */
+    .grid-two {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1.5rem;
       margin-top: 1.5rem;
     }
 
-    .toolkit-item {
+    .feature-card {
       border: 1px solid var(--vmi-border);
       border-radius: 6px;
       padding: 1.5rem;
@@ -109,13 +156,13 @@
       justify-content: space-between;
     }
 
-    .toolkit-item h3 {
+    .feature-card h3 {
       font-size: 1.1rem;
       color: var(--vmi-navy);
       margin-bottom: 0.5rem;
     }
 
-    .toolkit-item p {
+    .feature-card p {
       font-size: 0.9rem;
       color: var(--vmi-text-muted);
       margin-bottom: 1.25rem;
@@ -256,9 +303,10 @@
       color: var(--vmi-border);
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 650px) {
       .form-grid { grid-template-columns: 1fr; }
-      .card { padding: 1.5rem; }
+      .tab-content { padding: 1.5rem; }
+      .tab-btn { font-size: 0.85rem; padding: 1rem 0.75rem; }
     }
   </style>
 </head>
@@ -271,38 +319,42 @@
   </header>
 
   <main>
-    <!-- Toolkits Section -->
-    <section class="card">
-      <h2 class="section-heading">Deployable Toolkits & Intelligence Frameworks</h2>
-      <p style="color: var(--vmi-text-muted); font-size: 0.95rem;">
-        Directly access our proprietary operational matrices and competitive audit frameworks.
-      </p>
+    <!-- Navigation Tabs -->
+    <div class="tab-nav-container">
+      <button class="tab-btn active" onclick="switchTab(event, 'overview')">Overview</button>
+      <button class="tab-btn" onclick="switchTab(event, 'diagnostic')">Diagnostic Engine</button>
+      <button class="tab-btn" onclick="switchTab(event, 'toolkits')">Toolkits & Frameworks</button>
+      <button class="tab-btn" onclick="switchTab(event, 'protocol')">Protocol & SOPs</button>
+    </div>
 
-      <div class="toolkit-grid">
-        <div class="toolkit-item">
+    <!-- Tab 1: Overview -->
+    <div id="overview" class="tab-content active">
+      <h2 class="section-heading">Evidentiary Competitive Intelligence</h2>
+      <p class="section-subtext">We deliver surgical, unbiased market forensics to inform enterprise RFPs, M&A due diligence, pricing models, and defensive positioning.</p>
+      
+      <div class="grid-two">
+        <div class="feature-card">
           <div>
-            <h3>B2B Competitive Risk Framework</h3>
-            <p>Deployable matrix to identify, map, and neutralize rival service vulnerabilities and pricing blindspots.</p>
+            <h3>Forensic Market Audits</h3>
+            <p>Comprehensive deconstruction of rival capabilities, hidden sub-tier suppliers, and operational pricing vulnerabilities.</p>
           </div>
-          <a class="gumroad-button btn-buy" href="https://veritasmarketinsights.gumroad.com/l/b2b-risk-framework" target="_blank">Access Framework &rarr;</a>
+          <button class="btn-buy" onclick="activateTab('diagnostic')">Initiate Scope &rarr;</button>
         </div>
 
-        <div class="toolkit-item">
+        <div class="feature-card">
           <div>
-            <h3>Intelligence Master Kit</h3>
-            <p>Full 5-document operational suite covering tender auditing, digital footprints, and market defense.</p>
+            <h3>Operational Toolkits</h3>
+            <p>Institutional matrices and standardized intelligence SOPs ready for immediate deployment by executive leadership.</p>
           </div>
-          <a class="gumroad-button btn-buy" href="https://veritasmarketinsights.gumroad.com/l/master-kit" target="_blank">Access Master Kit &rarr;</a>
+          <button class="btn-buy" onclick="activateTab('toolkits')">View Toolkits &rarr;</button>
         </div>
       </div>
-    </section>
+    </div>
 
-    <!-- Diagnostic Intake Section -->
-    <section class="card" id="intake">
+    <!-- Tab 2: Diagnostic Engine -->
+    <div id="diagnostic" class="tab-content">
       <h2 class="section-heading">Initiate Diagnostic Intake Scope</h2>
-      <p style="color: var(--vmi-text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">
-        Submit your target parameters below. Our analysts will evaluate your scope and structure a verified engagement proposal.
-      </p>
+      <p class="section-subtext">Submit your target parameters below. Our analysts will evaluate your criteria and structure a verified engagement proposal.</p>
 
       <form id="diagnostic-form">
         <input type="hidden" name="access_key" value="af906552-436c-47d8-8ac0-3805c2e4e20a" />
@@ -358,7 +410,52 @@
           By transmitting, you acknowledge our <a href="/privacy.html" style="color: var(--vmi-teal-dark); text-decoration: underline;">Privacy Policy</a> and <a href="/terms.html" style="color: var(--vmi-teal-dark); text-decoration: underline;">Terms of Engagement</a>.
         </p>
       </form>
-    </section>
+    </div>
+
+    <!-- Tab 3: Toolkits -->
+    <div id="toolkits" class="tab-content">
+      <h2 class="section-heading">Deployable Toolkits & Intelligence Frameworks</h2>
+      <p class="section-subtext">Directly access our proprietary operational matrices and competitive audit frameworks.</p>
+
+      <div class="grid-two">
+        <div class="feature-card">
+          <div>
+            <h3>B2B Competitive Risk Framework</h3>
+            <p>Deployable matrix to identify, map, and neutralize rival service vulnerabilities and pricing blindspots.</p>
+          </div>
+          <a class="gumroad-button btn-buy" href="https://veritasmarketinsights.gumroad.com/l/b2b-risk-framework" target="_blank">Access Framework &rarr;</a>
+        </div>
+
+        <div class="feature-card">
+          <div>
+            <h3>Intelligence Master Kit</h3>
+            <p>Full 5-document operational suite covering tender auditing, digital footprints, and market defense.</p>
+          </div>
+          <a class="gumroad-button btn-buy" href="https://veritasmarketinsights.gumroad.com/l/master-kit" target="_blank">Access Master Kit &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab 4: Protocol -->
+    <div id="protocol" class="tab-content">
+      <h2 class="section-heading">Operating Protocol & Engagement Standards</h2>
+      <p class="section-subtext">Institutional research demands rigorous verification. Veritas Market Insights operates under three mandatory pillars:</p>
+      
+      <div style="display: flex; flex-direction: column; gap: 1rem;">
+        <div style="background: var(--vmi-slate); border-left: 4px solid var(--vmi-navy); padding: 1rem 1.25rem; border-radius: 4px;">
+          <h4 style="color: var(--vmi-navy); margin-bottom: 0.25rem;">1. Asynchronous Written Integrity</h4>
+          <p style="font-size: 0.9rem; color: var(--vmi-text-muted);">Eliminates subjective ambiguity and maintains a clear chain of custody across all intelligence briefs and deliverables.</p>
+        </div>
+        <div style="background: var(--vmi-slate); border-left: 4px solid var(--vmi-teal-dark); padding: 1rem 1.25rem; border-radius: 4px;">
+          <h4 style="color: var(--vmi-navy); margin-bottom: 0.25rem;">2. Independent Cross-Verification</h4>
+          <p style="font-size: 0.9rem; color: var(--vmi-text-muted);">Every competitive data point is verified across multiple independent primary, regulatory, or technical vectors before inclusion.</p>
+        </div>
+        <div style="background: var(--vmi-slate); border-left: 4px solid var(--vmi-navy); padding: 1rem 1.25rem; border-radius: 4px;">
+          <h4 style="color: var(--vmi-navy); margin-bottom: 0.25rem;">3. Strict Data Firewalls</h4>
+          <p style="font-size: 0.9rem; color: var(--vmi-text-muted);">Client targets and scope parameters are isolated under bilateral NDA terms and never aggregated into third-party pools.</p>
+        </div>
+      </div>
+    </div>
   </main>
 
   <footer>
@@ -375,6 +472,31 @@
   </footer>
 
   <script>
+    function switchTab(evt, tabId) {
+      var contents = document.getElementsByClassName("tab-content");
+      for (var i = 0; i < contents.length; i++) {
+        contents[i].classList.remove("active");
+      }
+
+      var buttons = document.getElementsByClassName("tab-btn");
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].classList.remove("active");
+      }
+
+      document.getElementById(tabId).classList.add("active");
+      evt.currentTarget.classList.add("active");
+    }
+
+    function activateTab(tabId) {
+      var targetBtn = Array.from(document.getElementsByClassName("tab-btn")).find(function(btn) {
+        return btn.getAttribute("onclick").includes(tabId);
+      });
+      if (targetBtn) {
+        targetBtn.click();
+        window.scrollTo({ top: document.querySelector('.tab-nav-container').offsetTop - 20, behavior: 'smooth' });
+      }
+    }
+
     document.addEventListener('DOMContentLoaded', function() {
       var form = document.getElementById('diagnostic-form');
       if (form) {
